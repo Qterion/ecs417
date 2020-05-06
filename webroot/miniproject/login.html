@@ -1,0 +1,63 @@
+<?php
+  include('functions.php')
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MNZ</title>
+<link rel="stylesheet" href="smirt.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<section class="form">
+   <div class="col-md-4 col-md-push-4" id="box" >
+       <div class="form_title">
+      <p>Login</p>
+   </div>
+<form method="POST" id="loginForm" action="login.php">
+   <div  id="err_message">
+   <?php echo display_error(); ?>
+   </div>
+   <ul class="stl">
+   <li>Username</li>
+   <li><input type="text" name="username" id="USERname"/><br /></li>
+<li>Password</li>
+<li><input type="password" name="password" id="USERPAss"><br /></li>
+<li><input type="button" name="login"  id="log_reg" class="btn" onclick="preventDefault()" value="Login"></li>
+<li><li>Don't have an account? <a href="register.html">click here</a></li></li>
+</ul>
+</form>
+</div>
+<script type="text/javascript">
+function preventDefault(){
+  var count=0;
+  document.getElementById("USERname").style.background='#ffffff';
+  document.getElementById("USERPAss").style.background='#ffffff';
+  document.getElementById("err_message").innerHTML = "";
+ if(document.getElementById("USERname").value ==""){
+    count=count+1;
+    document.getElementById("err_message").innerHTML += "Please enter the username<br />";
+    document.getElementById("USERname").style.background='#db6e67';
+  }
+  if(document.getElementById("USERPAss").value ==""){
+    count=count+1;
+    document.getElementById("err_message").innerHTML += "Please enter the password<br />";
+    document.getElementById("USERPAss").style.background='#db6e67';
+}
+if(count==0){
+  document.getElementById("loginForm").submit();
+}
+}
+</script>
+</section>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+ </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

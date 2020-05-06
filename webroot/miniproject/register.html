@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>MNZ</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="smirt.css">
+</head>
+
+<body>
+<section class="form">
+   <div class="col-md-4 col-md-push-4" id="box" >
+       <div class="form_title">
+      <p>Register</p>
+   </div>
+<form method="POST" id="regForm" action="register.php">
+   <div  id="err_message">
+   </div>
+   <ul class="stl">
+   <li>Username</li>
+   <li><input type="text" name="user" id="USERname"/><br /></li>
+<li>Password</li>
+<li><input type="password" name="password" id="USERPAss"><br /></li>
+</ul>
+<ul id="log_reg_buttons">
+<li><input type="button" name="register"  id="log_reg" class="btn" onclick="preventDefault()" value="Register"></li>
+<li>Already have an account?<a href="login.html">click here</a></li>
+</ul>
+</form>
+</div>
+</section>
+<script type="text/javascript">
+function preventDefault(){
+  var count=0;
+  document.getElementById("USERname").style.background='#ffffff';
+  document.getElementById("USERPAss").style.background='#ffffff';
+  document.getElementById("err_message").innerHTML = "";
+ if(document.getElementById("USERname").value ==""){
+    count=count+1;
+    document.getElementById("err_message").innerHTML += "Please enter the username<br />";
+    document.getElementById("USERname").style.background='#db6e67';
+  }
+  if(document.getElementById("USERPAss").value ==""){
+    count=count+1;
+    document.getElementById("err_message").innerHTML += "Please enter the password<br />";
+    document.getElementById("USERPAss").style.background='#db6e67';
+}
+if(count==0){
+  document.getElementById("regForm").submit();
+}
+}
+</script>
+</body>
+
+</html>

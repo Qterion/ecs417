@@ -1,0 +1,107 @@
+<?php include('functions.php')?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="project.css">
+  
+<title>MNZ</title>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-inverse" id="nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Nursultan Mussa</a>
+    </div>
+     <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Blog</a></li>
+        <li><a href="#">Links</a></li>
+        <li><a href="#">My projects</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <?php if($_SESSION["user"]){ ?>
+      <li><span class="glyphicon glyphicon-user" ></span> Welcome <strong><?php echo $_SESSION['user'];?></strong></a></li>
+      <li><a href="mini.html?logout='1'"><span class="glyphicon glyphicon-log-out" data-toggle="modal" data-target="#LogoutForm"></span> Logout</a></li>
+  <?php }else{ ?>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
+      <li><a href="login.php"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#LoginForm"></span> Login</a></li>
+  <?php }?>
+    </div>
+  </div>
+</nav>
+</header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-7 col-md-push-2" >
+     <div class="col-md-8 col-lg-8">
+     	<h2>About Myself</h2>
+    <p>My name is Nursultan Mussa and i am QMUL stundent</p>
+     </div>
+     
+ <div class="row">
+ <div class="col-md-6" id="image">
+     <img src="pic.png" alt="Nursultan Mussa" class="img-responsive img-right">
+</div>
+
+
+</div>
+</div>
+	<div class="col-md-2 col-md-pull-7">
+		<div class="Research">
+<h2 class="side">Research Interests</h2>
+<ul>
+<li><p>Machine Learning</p></li>
+<li><p>Game Development</p></li>
+</ul>
+</div>
+<div class="hyps">
+<ul>
+<li><a href="">CV</a></li>
+<li><a href="">Skills</a></li>
+<li><a href="">Hobbies</a></li>
+<li><a href="">Links</a></li>
+</ul>
+</div>
+</div>
+
+<div class="col-md-3">
+	<div class="Hobbies">
+<ul class="hb">
+<li><h2 class="title">Hobbies</h2></li>
+<li><p>Programming</p></li>
+<li><p>Cricket</p></li>
+<li><p>Football</p></li>
+</ul>
+</div>
+<div class="top_movies">
+<ul class="hb">
+<li><h2 class="title">Top 5 Movies</h2>
+</li>
+<li><p>Avengers-Infinity War</p></li>
+<li><p>Star Wars-A New Hope</p></li>
+<li><p>Captain America-Civil War</p></li>
+<li><p>Matrix</p></li>
+<li><p>Terminator 2</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

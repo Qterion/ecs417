@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MNZ</title>
+<link rel="stylesheet" href="project.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<section class="form">
+   <div class="col-md-4 col-md-push-4" id="box" >
+       <div class="form_title">
+      <p >Add New Post</p>
+   </div>
+<form id="myform" method="POST" action="functions.php">
+   <div  id="err_message">
+   </div>
+   <ul class="stl">
+   <li>Title</li>
+   <li><input type="text" name="Title" id="title"/><br /></li>
+<li>Post Content</li>
+<li><input type="text" name="Post_text" id="content"><br /></li>
+</ul>
+<input type="button" name="post"  id="log_reg" class="btn" onclick="preventDefault()" value="Submit">
+<input type="button" name="clean" id="log_reg" class="btn" onclick="Clear()" value="Clear">
+</form>
+</div>
+<script type="text/javascript">
+function Clear(){
+  document.getElementById("myform").reset();
+}
+function preventDefault(){
+  var count=0;
+  document.getElementById("err_message").innerHTML = "";
+ if(document.getElementById("title").value ==""){
+    count=count+1;
+    document.getElementById("err_message").innerHTML += "Please fill title<br />";
+  }
+  if(document.getElementById("content").value ==""){
+    count=count+1;
+    document.getElementById("err_message").innerHTML += "Please add some content<br />";
+}
+if(count==0){
+  document.getElementById("myform").submit();
+}
+}
+</script>
+</body>
+</html>
