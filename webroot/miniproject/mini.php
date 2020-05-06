@@ -52,7 +52,7 @@
      </div>
  <div class="col-md-3" id="image">
     <figure>
-      <img class="responsive" src="pic.png" alt="Nursultan Mussa">
+      <img class="responsive" src="Deagle.jpg" alt="Nursultan Mussa">
       <figcaption style="font-size: 10px;">Atyrau 2020</figcaption>
     </figure>
 </div>
