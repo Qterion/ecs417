@@ -21,6 +21,10 @@ body{
 .text{
 	text-align: left;
 }
+.responsive {
+  width: 100%;
+  height: auto;
+}
 .span4 img {
     margin-right: 10px;
 }
