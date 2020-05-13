@@ -30,11 +30,11 @@ function login(){
 		if(mysqli_num_rows($result)==1){
 			$_SESSION['user']=$user;
 			$_SESSION['success']="you are now logged in";
-			header('location: mini.php');
+			header('location: index.php');
 		}
 		else{
 			array_push($errors,"The username/password was incorrect");
-			header('location: mini.php');
+			header('location: index.php');
 		}
 
 }
@@ -62,5 +62,5 @@ if(isset($_GET['logout']))
 function logout(){
 	session_destroy();
 	unset($_SESSION['user']);
-	header('location: mini.php');
+	header('location: index.php');
 }

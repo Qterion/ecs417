@@ -12,7 +12,7 @@ if ($db->connect_error) {
 }
 
 	define ('ROOT_PATH', realpath(dirname(__FILE__)));
-	define('BASE_URL', 'http://localhost/miniproject/blog.php');
+	define('BASE_URL', 'http://localhost/miniproject/viewBlog.php');
 
 // variable declaration
 $username = "";
@@ -33,7 +33,7 @@ function getPost($slug){
 if (isset($_POST['month'])){
 	global $month;
 	$month=e($_POST['month']);
-	header("Location:blog.php?month=$month;");
+	header("Location:viewBlog.php?month=$month;");
 }
 if (isset($_POST['Comment'])){
 add_comment();
@@ -54,7 +54,7 @@ if(isset($_GET['post_del'])){
 	mysqli_query($db,$query);
 	$query= "DELETE FROM posts WHERE id='$id'";
 	mysqli_query($db,$query);
-	header("location: blog.php");
+	header("location: viewBlog.php");
 }
 if (isset($_GET['del'])) {
 	global $db;
@@ -63,9 +63,14 @@ if (isset($_GET['del'])) {
 	mysqli_query($db,$query);
     header("location: single.php?id=".$_GET['id']."");
 }
+
 function e($val){
 	global $db;
 	return mysqli_real_escape_string($db, trim($val));
+}
+function get_month(){
+	global $month;
+	echo($month);
 }
 if(isset($_GET['logout']))
 {
@@ -74,5 +79,5 @@ if(isset($_GET['logout']))
 function logout(){
 	session_destroy();
 	unset($_SESSION['user']);
-	header('location: mini.php');
+	header('location: index.php');
 }

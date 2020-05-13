@@ -15,14 +15,14 @@
        <div class="form_title">
       <p >Add New Post</p>
    </div>
-<form id="myform" method="POST" action="functions.php">
+<form id="myform" method="POST" action="addPost.php">
    <div  id="err_message">
    </div>
    <ul class="stl">
    <li>Title</li>
-   <li><input type="text" name="Title" id="title"/><br /></li>
+   <li><input placeholder="Title" type="text" name="Title" id="title"/><br /></li>
 <li>Post Content</li>
-<li><input type="text" name="Post_text" id="content"><br /></li>
+<li><textarea placeholder="Content "type="text" name="Post_text" id="content" rows="20" cols="50"></textarea><br /></li>
 </ul>
 <input type="button" name="post"  id="log_reg" class="btn" onclick="preventDefault()" value="Submit">
 <input type="button" name="clean" id="log_reg" class="btn" onclick="Clear()" value="Clear">
@@ -34,14 +34,18 @@ function Clear(){
 }
 function preventDefault(){
   var count=0;
+  document.getElementById("title").style.background='#ffffff';
+  document.getElementById("content").style.background='#ffffff';
   document.getElementById("err_message").innerHTML = "";
  if(document.getElementById("title").value ==""){
     count=count+1;
     document.getElementById("err_message").innerHTML += "Please fill title<br />";
+    document.getElementById("title").style.background='#db6e67';
   }
   if(document.getElementById("content").value ==""){
     count=count+1;
     document.getElementById("err_message").innerHTML += "Please add some content<br />";
+     document.getElementById("content").style.background='#db6e67';
 }
 if(count==0){
   document.getElementById("myform").submit();

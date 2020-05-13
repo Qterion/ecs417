@@ -19,6 +19,7 @@ else{
 <body>
   <div id="container">
 <header>
+<hgroup>
 <nav class="navbar navbar-inverse" id="nav">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -27,17 +28,17 @@ else{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="mini.php">Nursultan Mussa</a>
+      <a class="navbar-brand" href="index.php">Nursultan Mussa</a>
     </div>
      <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="blog.php">Blog</a></li>
-       <li><a href="My_projects.php">My projects</a></li>
+        <li><a href="viewBlog.php">Blog</a></li>
+        <li><a href="My_projects.php">My projects</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <?php if(isset($_SESSION["user"])){ ?>
         <li><p id="welcome_user"> Welcome <strong><?php echo $_SESSION['user'];?></strong></p></li>
-      <li><a href="mini.php?logout='1'"><span class="glyphicon glyphicon-log-out" data-toggle="modal" data-target="#LogoutForm"></span> Logout</a></li>
+      <li><a href="logout.php?logout='1'"><span class="glyphicon glyphicon-log-out" data-toggle="modal" data-target="#LogoutForm"></span> Logout</a></li>
   <?php }else{ ?>
       <li><a href="register.html"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
       <li><a href="login.html"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#LoginForm"></span> Login</a></li>
@@ -46,6 +47,7 @@ else{
     </div>
   </div>
 </nav>
+</hgroup>
 </header>
 <div class="container-fluid">
 	<div class="row">

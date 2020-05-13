@@ -44,7 +44,7 @@ function register(){
 			mysqli_query($db, $query);
 			$_SESSION['user']=$user;
 			$_SESSION['success']="you are now logged in";
-			header('location: mini.php');
+			header('location: index.php');
 		}
 		else
 		{
