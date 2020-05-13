@@ -33,3 +33,7 @@ function addpost(){
 	mysqli_query($db, $query);
 	header("Location:viewBlog.php");
 }
+function e($val){
+	global $db;
+	return mysqli_real_escape_string($db, trim($val));
+}
