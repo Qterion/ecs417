@@ -34,7 +34,7 @@ function login(){
 		}
 		else{
 			array_push($errors,"The username/password was incorrect");
-			header('location: index.php');
+			header('location: login.php');
 		}
 
 }
