@@ -2,10 +2,10 @@
 ?>
 <?php 
 if(isset($_GET['id'])){
-	$post=getPost($_GET['id']);
+  $post=getPost($_GET['id']);
 }
 else{
-	echo("nothing here");
+  echo("nothing here");
 }
 ?>
 <!DOCTYPE html>
@@ -14,12 +14,11 @@ else{
 <meta charset="utf-8">
 <title>MNZ</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="gerg.css">
+<link rel="stylesheet" type="text/css" href="my_styles.css">
 </head>
 <body>
   <div id="container">
 <header>
-<hgroup>
 <nav class="navbar navbar-inverse" id="nav">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -47,19 +46,18 @@ else{
     </div>
   </div>
 </nav>
-</hgroup>
 </header>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-push-2" id="top">
-			<div class="blog_head">
+  <div class="row">
+    <section class="col-md-8 col-md-push-2" id="top">
+      <article class="blog_head">
         <ul class="single_head">
-				<li><p class="single_title"><?php echo($post['title']); ?></p></li>
-				<li><p id="date" class="pull-right"><strong><?php echo date("jS F, Y,h:i A",strtotime($post['timestamp']));?></strong></p></li>
+        <li><p class="single_title"><?php echo($post['title']); ?></p></li>
+        <li><p id="date" class="pull-right"><strong><?php echo date("jS F, Y,h:i A",strtotime($post['timestamp']));?></strong></p></li>
       </ul>
-			</div>
+      </article>
       <ul class="single_body">
-			<li><p class="single_content"><?php echo($post['post_text']);?></p></li>
+      <li><p class="single_content"><?php echo($post['post_text']);?></p></li>
       <li><p class="made_by">Made by: <?php echo($post['user']);?></p></li>
       <?php
       if(isset($_SESSION["user"])){
@@ -71,8 +69,8 @@ else{
      }}
      ?>
    </ul>
-		</div>
-    <div class="col-md-8 col-md-push-2">
+    </section>
+    <section class="col-md-8 col-md-push-2">
       <?php if(isset($_SESSION["user"])){ ?>
         <form  method="POST" action="post.php?id=<?php echo $post['id'];?>" id="Comment_form">
         <p><img id="user_img" src="default.png" alt="Default img">
@@ -114,11 +112,13 @@ else{
       </ul>
     <?php } }?>
 
-    </div>
-	</div>
+    </section>
+  </div>
 </div>
 </div>
 <footer>
+<p id="footer">Links</p>
+<p id="footer">email- <a href="mailto:musa.nursultan@gmail.com" class="links">musa.nursultan@gmail.com</a></p>
 <p id="footer">© 2020 Mussa Nursultan</p>
 </footer>
 <script type="text/javascript">

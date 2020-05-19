@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>MNZ</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="gerg.css">
+<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="my_styles.css">
 </head>
 <body>
 <div id="container">
 <header>
-<hgroup>
 <nav class="navbar navbar-inverse" id="nav">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -41,25 +41,74 @@
     </div>
   </div>
 </nav>
-</hgroup>
 </header>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-9" >
-     <div class="col-md-8 col-lg-8">
-     	<h2>About Myself</h2>
-    <p>My name is Nursultan Mussa and i am QMUL stundent</p>
-     </div>
- <div class="col-md-3" id="image">
-    <figure>
-      <img class="responsive" src="Deagle.jpg" alt="Nursultan Mussa">
-      <figcaption style="font-size: 10px;">Atyrau 2020</figcaption>
+<div class="container-fluid" id="main_part">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <section class="row" id="Myself">
+     <div class="col-md-12 text-center">
+      <h2>About Myself</h2>
+      <section id="abmyslf">
+    <p>My name is Nursultan Mussa and i am computer science student at Queen Mary University of London </p>
+  </section>
+  </div>
+  <figure id="main_img" class="col-md-8 col-md-push-4">
+      <img src="my_image.jpg" class="img-responsive" alt="Nursultan Mussa">
     </figure>
+</section>
+<div class="row">
+<section class="col-md-12">
+      <h2 class="Education_title">Education</h2>
+    <table class="Education" style="font-size:15px; ">
+      <thead>
+      <tr>
+        <td><p>Years</p></td>
+        <td><p>Qualification</p></td>
+      </tr>
+    </thead>
+      <tr>
+        <td><p>2019 - Present: </p></td>
+        <td><p> Bachelor of Computer Science at Queen Mary University of London  </p></td>
+      </tr>
+      <tr>
+        <td><p>2018 - 2019 : </p></td>
+        <td><p> University Foundation Programme (UFP) at The David Game College  </p></td>
+      </tr>
+      <tr>
+        <td><p>2016 - 2018 : </p></td>
+        <td><p> IGCSE at The David Game College </p></td>
+      </tr>
+    </table>
+     </section>
+   </div>
 </div>
-<div class="col-md-4" id="main_box" >
- <article class="box_title">
-  <p>Most recent post</p>
-  </article>
+<div class="col-md-2 col-md-pull-8">
+  <aside>
+  <article id="main_box">
+ <h3 class="box_title" >Professional skills</h3>
+<section class="box_content">
+<ul id="list">
+  <li>HTML-Hyper Text Markup Language</li>
+  <li>CSS- Cascading Style Sheets</li>
+  <li>Java</li>
+</ul>
+</section>
+</article>
+</aside>
+<aside>
+<article  id="main_box">
+<h3 class="box_title">Research Interests</h3>
+<section class="box_content">
+  <p>Machine learning</p>
+  <p>Image processing</p>
+</section>
+</article>
+</aside>
+</div>
+<div class="col-md-2">
+<aside>
+  <article id="main_box">
+ <h3 class="box_title"> Most recent post</h3>
   <section class="box_content">
   <?php
   $sql="SELECT * FROM posts ORDER BY id DESC LIMIT 1";
@@ -77,37 +126,15 @@
       <p>No posts yet</p>
     <?php }}?>
 </section>
-</div>
-</div>
-
-<div class="col-md-3">
-  <aside>
-	<div id="main_box">
-<article class="box_title"><p>Hobbies</p></article>
-<section class="box_content">
-<p>Programming</p>
-<p>Cricket</p>
-<p>Football</p>
-</section>
-</div>
-</aside>
-<aside>
-<div id="main_box">
-<article class="box_title"><p>Top 5 Movies</p></article>
-<section class="box_content">
-<p>Avengers-Infinity War</p>
-<p>Star Wars-A New Hope</p>
-<p>Captain America-Civil War</p>
-<p>Matrix</p>
-<p>Terminator 2</p>
-</section>
-</div>
+</article>
 </aside>
 </div>
 </div>
 </div>
 </div>
 <footer>
+<p id="footer">Links</p>
+<p id="footer">email- <a href="mailto:musa.nursultan@gmail.com" class="links">musa.nursultan@gmail.com</a></p>
 <p id="footer">© 2020 Mussa Nursultan</p>
 </footer>
 </body>

@@ -4,20 +4,21 @@
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MNZ</title>
-<link rel="stylesheet" href="smirt.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" href="my_styles.css">
 </head>
 
 <body>
 <section class="form">
    <div class="col-md-4 col-md-push-4" id="box" >
-       <div class="form_title">
-      <p>Login</p>
-   </div>
+       <h2 class="form_title">
+      Login
+   </h2>
 <form method="POST" id="loginForm" action="login.php">
-   <div  id="err_message">
+   <p id="err_message">
    <?php echo display_error(); ?>
-   </div>
+   </p>
    <ul class="stl">
    <li>Username</li>
    <li><input placeholder="username" type="text" name="username" id="USERname"/><br /></li>
@@ -28,6 +29,7 @@
 </ul>
 </form>
 </div>
+</section>
 <script type="text/javascript">
 function preventDefault(){
   var count=0;

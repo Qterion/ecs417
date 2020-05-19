@@ -5,19 +5,18 @@
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MNZ</title>
-<link rel="stylesheet" href="project.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" href="my_styles.css">
 </head>
 
 <body>
 <section class="form">
    <div class="col-md-4 col-md-push-4" id="box" >
-       <div class="form_title">
-      <p >Add New Post</p>
-   </div>
+      <h2 class="form_title">Add New Post</h2>
 <form id="myform" method="POST" action="addPost.php">
-   <div  id="err_message">
-   </div>
+   <p  id="err_message">
+   </p>
    <ul class="stl">
    <li>Title</li>
    <li><input placeholder="Title" type="text" name="Title" id="title"/><br /></li>
@@ -28,6 +27,7 @@
 <input type="button" name="clean" id="log_reg" class="btn" onclick="Clear()" value="Clear">
 </form>
 </div>
+</section>
 <script type="text/javascript">
 function Clear(){
   document.getElementById("myform").reset();
